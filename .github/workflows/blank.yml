@@ -16,7 +16,7 @@ jobs:
 
       - name: Build an image from Dockerfile
         run: |
-          docker build -t docker.pkg.github.com/freddiemac-internal/kubeflow/notebookcontroller:${{ github.sha }} .
+          docker build . --file ./components/notebook-controller/Dockerfile -t docker.pkg.github.com/freddiemac-internal/kubeflow/notebookcontroller:${{ github.sha }} .
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
