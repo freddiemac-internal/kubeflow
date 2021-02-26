@@ -11,9 +11,9 @@ COPY go.sum go.sum
 RUN go mod download
 
 # Copy the go source
-COPY main.go main.go
-COPY api/ api/
-COPY controllers/ controllers/
+COPY ./components/profile-controller/main.go main.go
+COPY ./components/profile-controller/api/ api/
+COPY ./components/profile-controller/controllers/ controllers/
 RUN cp /bin/dash /workspace/dash
 
 # Build
