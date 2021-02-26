@@ -29,7 +29,7 @@ FROM gcr.io/distroless/base:latest as serve
 WORKDIR /
 COPY --from=builder /workspace/dash /bin/dash
 
-COPY third_party third_party
+COPY ./components/profile-controller/third_party third_party
 COPY --from=builder /workspace/manager .
 COPY --from=builder /go/pkg/mod/github.com/hashicorp third_party/library/
 
